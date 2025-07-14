@@ -46,6 +46,7 @@ export class RepairForm implements OnInit {
       if (!selectedClient) return;
 
       const newRepair: Omit<RepairOrder, 'id' | 'createdAt' | 'updatedAt'> = {
+        clientId: this.repairForm.value.clientId,
         clientName: `${selectedClient.name} ${selectedClient.lastName}`,
         equipmentDetails: this.repairForm.value.equipmentDetails,
         issueDescription: this.repairForm.value.issueDescription,

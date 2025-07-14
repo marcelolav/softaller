@@ -9,5 +9,9 @@ import { RepairForm } from '../repair-form/repair-form';
   styleUrl: './repairs-dashboard.css'
 })
 export class RepairsDashboard {
+  isFormVisible = false;
 
+  toggleForm(): void {
+    this.isFormVisible = !this.isFormVisible;
+  }
 }

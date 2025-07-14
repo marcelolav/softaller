@@ -1,5 +1,8 @@
 <div class="dashboard-container">
   <h1>Repair Workshop Tracker</h1>
-  <app-repair-form></app-repair-form>
+  <button (click)="toggleForm()">
+    {{ isFormVisible ? 'Cerrar' : 'Nueva Reparación' }}
+  </button>
+  <app-repair-form *ngIf="isFormVisible" (formClose)="toggleForm()"></app-repair-form>
   <app-repair-list></app-repair-list>
 </div>
