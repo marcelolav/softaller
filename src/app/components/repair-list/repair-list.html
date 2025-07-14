@@ -1,0 +1,25 @@
+<div class="repair-list-container">
+  <h2>Current Repairs</h2>
+  <table class="repair-table">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Equipment</th>
+        <th>Issue</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let repair of repairs$ | async">
+        <td>{{ repair.clientName }}</td>
+        <td>{{ repair.equipmentDetails }}</td>
+        <td>{{ repair.issueDescription }}</td>
+        <td>{{ repair.status }}</td>
+        <td>
+          <button (click)="deleteRepair(repair.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

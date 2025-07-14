@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <h3>Cerrar Reparación</h3>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <div class="mb-3">
+      <label for="materiales" class="form-label">Descripción de Materiales</label>
+      <textarea class="form-control" id="materiales" rows="3" formControlName="materiales"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="precioMateriales" class="form-label">Precio de Materiales</label>
+      <input type="number" class="form-control" id="precioMateriales" formControlName="precioMateriales">
+    </div>
+    <div class="mb-3">
+      <label for="precioManoDeObra" class="form-label">Precio de Mano de Obra</label>
+      <input type="number" class="form-control" id="precioManoDeObra" formControlName="precioManoDeObra">
+    </div>
+    <div class="mb-3">
+      <label for="trabajoRealizado" class="form-label">Trabajo Realizado</label>
+      <textarea class="form-control" id="trabajoRealizado" rows="3" formControlName="trabajoRealizado"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="total" class="form-label">Total</label>
+      <input type="number" class="form-control" id="total" formControlName="total">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Guardar</button>
+    <button type="button" class="btn btn-secondary ms-2" (click)="print()">Imprimir</button>
+  </form>
+</div>

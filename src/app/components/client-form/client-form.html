@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>{{ isEditMode ? 'Editar Cliente' : 'Agregar Cliente' }}</h2>
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" id="name" formControlName="name" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Apellido</label>
+      <input type="text" id="lastName" formControlName="lastName" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Dirección</label>
+      <input type="text" id="address" formControlName="address" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Teléfono</label>
+      <input type="text" id="phone" formControlName="phone" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="clientForm.invalid">{{ isEditMode ? 'Actualizar' : 'Crear' }}</button>
+  </form>
+</div>
