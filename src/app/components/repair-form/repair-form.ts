@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-repair-form',
+  standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './repair-form.html',
   styleUrl: './repair-form.css'
@@ -26,7 +27,7 @@ export class RepairForm implements OnInit {
       clientId: ['', Validators.required],
       equipmentDetails: ['', Validators.required],
       issueDescription: ['', Validators.required],
-      status: ['Pending', Validators.required]
+      status: ['In Progress', Validators.required]
     });
   }
 
@@ -54,7 +55,7 @@ export class RepairForm implements OnInit {
       };
       this.repairService.addRepair(newRepair)
         .then(() => {
-          this.repairForm.reset({ status: 'Pending' });
+          this.repairForm.reset({ status: 'In Progress' });
           this.formClose.emit();
         })
         .catch(error => console.error('Error adding repair order: ', error));

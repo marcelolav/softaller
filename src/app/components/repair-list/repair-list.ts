@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RepairOrder } from '../../models/repair-order.model';
 import { RepairService } from '../../services/repair.service';
 
 @Component({
   selector: 'app-repair-list',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './repair-list.html',
   styleUrl: './repair-list.css'
 })

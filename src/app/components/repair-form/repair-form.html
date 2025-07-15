@@ -17,14 +17,5 @@
     <label for="issueDescription">Issue Description</label>
     <textarea id="issueDescription" formControlName="issueDescription"></textarea>
   </div>
-  <div class="form-group">
-    <label for="status">Status</label>
-    <select id="status" formControlName="status">
-      <option value="Pending">Pending</option>
-      <option value="In Progress">In Progress</option>
-      <option value="Completed">Completed</option>
-      <option value="Cancelled">Cancelled</option>
-    </select>
-  </div>
   <button type="submit" [disabled]="!repairForm.valid">Add Repair</button>
 </form>

@@ -17,7 +17,12 @@
         <td>{{ repair.issueDescription }}</td>
         <td>{{ repair.status }}</td>
         <td>
-          <button (click)="deleteRepair(repair.id!)">Delete</button>
+          <a [routerLink]="['/repairs/close', repair.id]" class="icon-button">
+            <i class="fas fa-check"></i>
+          </a>
+          <button (click)="deleteRepair(repair.id!)" class="icon-button delete-button">
+            <i class="fas fa-trash"></i>
+          </button>
         </td>
       </tr>
     </tbody>

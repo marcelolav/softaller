@@ -1,9 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router, RouterOutlet, RouterLink } from '@angular/router';
+import { RepairsDashboard } from './components/repairs-dashboard/repairs-dashboard';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RepairsDashboard],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

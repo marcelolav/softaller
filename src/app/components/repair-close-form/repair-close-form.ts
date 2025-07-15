@@ -6,12 +6,14 @@ import { ClientService } from '../../services/client.service';
 import { RepairOrder } from '../../models/repair-order.model';
 import { Client } from '../../models/client';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-repair-close-form',
+  standalone: true,
   templateUrl: './repair-close-form.html',
   styleUrls: ['./repair-close-form.css'],
-  imports: [ReactiveFormsModule]
+  imports: [ReactiveFormsModule, CommonModule]
 })
 export class RepairCloseFormComponent implements OnInit {
   form: FormGroup;
@@ -29,7 +31,8 @@ export class RepairCloseFormComponent implements OnInit {
       precioMateriales: [0, [Validators.required, Validators.min(0)]],
       precioManoDeObra: [0, [Validators.required, Validators.min(0)]],
       trabajoRealizado: ['', Validators.required],
-      total: [{ value: 0, disabled: true }]
+      total: [{ value: 0, disabled: true }],
+      status: ['', Validators.required]
     });
   }
 
@@ -57,9 +60,14 @@ export class RepairCloseFormComponent implements OnInit {
   }
 
   save() {
-    if (this.form.valid) {
-      // Logic to save the form data
-      console.log(this.form.value);
+    if (this.form.valid && this.repairOrder) {
+      const updatedRepair = {
+        ...this.repairOrder,
+        ...this.form.getRawValue()
+      };
+      this.repairService.updateRepair(updatedRepair)
+        .then(() => console.log('Repair order updated successfully'))
+        .catch(error => console.error('Error updating repair order: ', error));
     }
   }
 
