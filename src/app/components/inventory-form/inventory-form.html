@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>{{ isEditMode ? 'Edit' : 'Add' }} Item</h2>
+  <form [formGroup]="inventoryForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="barcode" class="form-label">Barcode</label>
+      <input type="text" id="barcode" class="form-control" formControlName="barcode">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" id="description" class="form-control" formControlName="description">
+    </div>
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input type="number" id="quantity" class="form-control" formControlName="quantity">
+    </div>
+    <div class="mb-3">
+      <label for="unitOfMeasure" class="form-label">Unit of Measure</label>
+      <input type="text" id="unitOfMeasure" class="form-control" formControlName="unitOfMeasure">
+    </div>
+    <div class="mb-3">
+      <label for="purchasePrice" class="form-label">Purchase Price (AR$)</label>
+      <input type="number" id="purchasePrice" class="form-control" formControlName="purchasePrice">
+    </div>
+    <div class="mb-3">
+      <label for="sellingPrice" class="form-label">Selling Price (AR$)</label>
+      <input type="number" id="sellingPrice" class="form-control" formControlName="sellingPrice">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="inventoryForm.invalid">{{ isEditMode ? 'Update' : 'Create' }}</button>
+  </form>
+</div>

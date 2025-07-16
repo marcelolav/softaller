@@ -4,6 +4,8 @@ import { RepairsDashboard } from './components/repairs-dashboard/repairs-dashboa
 import { ClientListComponent } from './components/client-list/client-list';
 import { ClientFormComponent } from './components/client-form/client-form';
 import { RepairCloseFormComponent } from './components/repair-close-form/repair-close-form';
+import { InventoryListComponent } from './components/inventory-list/inventory-list';
+import { InventoryFormComponent } from './components/inventory-form/inventory-form';
 
 export const routes: Routes = [
   { path: '', component: RepairsDashboard },
@@ -11,5 +13,8 @@ export const routes: Routes = [
   { path: 'clients', component: ClientListComponent },
   { path: 'clients/new', component: ClientFormComponent },
   { path: 'clients/edit/:id', component: ClientFormComponent },
+  { path: 'inventory', component: InventoryListComponent },
+  { path: 'inventory/new', component: InventoryFormComponent },
+  { path: 'inventory/edit/:id', component: InventoryFormComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
