@@ -2,27 +2,27 @@
   <h2>{{ isEditMode ? 'Edit' : 'Add' }} Item</h2>
   <form [formGroup]="inventoryForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label for="barcode" class="form-label">Barcode</label>
+      <label for="barcode" class="form-label">Código</label>
       <input type="text" id="barcode" class="form-control" formControlName="barcode">
     </div>
     <div class="mb-3">
-      <label for="description" class="form-label">Description</label>
+      <label for="description" class="form-label">Descripción</label>
       <input type="text" id="description" class="form-control" formControlName="description">
     </div>
     <div class="mb-3">
-      <label for="quantity" class="form-label">Quantity</label>
+      <label for="quantity" class="form-label">Cantidad</label>
       <input type="number" id="quantity" class="form-control" formControlName="quantity">
     </div>
     <div class="mb-3">
-      <label for="unitOfMeasure" class="form-label">Unit of Measure</label>
+      <label for="unitOfMeasure" class="form-label">Unidad de Medida</label>
       <input type="text" id="unitOfMeasure" class="form-control" formControlName="unitOfMeasure">
     </div>
     <div class="mb-3">
-      <label for="purchasePrice" class="form-label">Purchase Price (AR$)</label>
+      <label for="purchasePrice" class="form-label">Precio de Compra (AR$)</label>
       <input type="number" id="purchasePrice" class="form-control" formControlName="purchasePrice">
     </div>
     <div class="mb-3">
-      <label for="sellingPrice" class="form-label">Selling Price (AR$)</label>
+      <label for="sellingPrice" class="form-label">Precio de Venta (AR$)</label>
       <input type="number" id="sellingPrice" class="form-control" formControlName="sellingPrice">
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="inventoryForm.invalid">{{ isEditMode ? 'Update' : 'Create' }}</button>

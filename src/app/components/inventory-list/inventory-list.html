@@ -1,21 +1,21 @@
 <div class="container">
-  <h2>Inventory List</h2>
+  <h2>Lista de Inventario</h2>
   <div class="d-flex justify-content-between mb-3">
-    <button class="btn btn-primary" (click)="addItem()">Add New Item</button>
+    <button class="btn btn-primary" (click)="addItem()">Agregar Producto</button>
     <div class="input-group w-50">
-      <input type="text" class="form-control" placeholder="Search by barcode" (input)="search($event)">
+      <input type="text" class="form-control" placeholder="Buscar por código" (input)="search($event)">
     </div>
   </div>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Barcode</th>
-        <th>Description</th>
-        <th>Quantity</th>
-        <th>Unit</th>
-        <th>Purchase Price (AR$)</th>
-        <th>Selling Price (AR$)</th>
-        <th>Actions</th>
+        <th>Código</th>
+        <th>Descripción</th>
+        <th>Cantidad</th>
+        <th>Unidad</th>
+        <th>Precio de Compra (AR$)</th>
+        <th>Precio de Venta (AR$)</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -27,8 +27,8 @@
         <td>{{ item.purchasePrice | currency:'ARS':'$' }}</td>
         <td>{{ item.sellingPrice | currency:'ARS':'$' }}</td>
         <td>
-          <button class="btn btn-sm btn-primary" (click)="editItem(item.id)">Edit</button>
-          <button class="btn btn-sm btn-danger" (click)="deleteItem(item.id)">Delete</button>
+          <button class="btn btn-sm btn-primary" (click)="editItem(item.id)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteItem(item.id)">Eliminar</button>
         </td>
       </tr>
     </tbody>
