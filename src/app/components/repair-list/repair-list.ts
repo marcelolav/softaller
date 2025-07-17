@@ -22,9 +22,9 @@ export class RepairList implements OnInit {
   ngOnInit(): void { }
 
   deleteRepair(id: string): void {
-    if (confirm('Are you sure you want to delete this repair order?')) {
+    if (confirm('Está seguro de eliminar esta orden de reparación?')) {
       this.repairService.deleteRepair(id)
-        .catch(error => console.error('Error deleting repair order: ', error));
+        .catch(error => console.error('Error al eliminar la orden de reparación: ', error));
     }
   }
 }

@@ -6,6 +6,8 @@ import { ClientFormComponent } from './components/client-form/client-form';
 import { RepairCloseFormComponent } from './components/repair-close-form/repair-close-form';
 import { InventoryListComponent } from './components/inventory-list/inventory-list';
 import { InventoryFormComponent } from './components/inventory-form/inventory-form';
+import { IncomeList } from './components/income-list/income-list';
+import { IncomeForm } from './components/income-form/income-form';
 
 export const routes: Routes = [
   { path: '', component: RepairsDashboard },
@@ -16,5 +18,8 @@ export const routes: Routes = [
   { path: 'inventory', component: InventoryListComponent },
   { path: 'inventory/new', component: InventoryFormComponent },
   { path: 'inventory/edit/:id', component: InventoryFormComponent },
+  { path: 'income', component: IncomeList },
+  { path: 'income/new', component: IncomeForm },
+  { path: 'income/edit/:id', component: IncomeForm },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
